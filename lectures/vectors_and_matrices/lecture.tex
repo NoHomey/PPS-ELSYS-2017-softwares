@@ -259,6 +259,257 @@ $\|(a_1, \; a_2, \; \dots, \; a_n)\| = \sqrt{a_1^2 + a_2^2 + \dots + a_n^2} = \s
 
 Очевидно отново ще имаме свойстовото $\|\lambda.(a_1, \; a_2, \; \dots, \; a_n)\| = |\lambda|.\|(a_1, \; a_2, \; \dots, \; a_n)\|$
 
+\section*{Матрици}
 
+Забележка: В този курс ще разглеждаме само матрици от реални числа. \\
+
+Неформалната ни дефиниция за матрица с m реда и n стълба е: правоъгълна табличка от числа (с размерност $m \times n$). \\
+
+Множеството от всички матрици с m реда и n стълба от рални числа ще бележим с $\R_{m \times n}$ и то за нас ще бъде следното множество: \\\\
+
+$ \R_{m \times n} = \left\{
+    \begin{pmatrix}
+        a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+    \end{pmatrix} \; \Bigg| \; i = 1, \; \dots, \; m, \; j = 1, \; \dots, \; n \quad a_{ij} \in \R
+\right\} $ \\\\
+
+\subsection*{Да направим Матриците вектори}
+
+Първото нещо, което забелязваме е че можем да "постройм" функция, която на всяка матрица от $\R_{m \times n}$ съпоставим точно един
+елемент на множеството $\R^{m.n}$. Една такава функция на езика на математиката е например следната: \pagebreak
+
+$
+    \varphi \; : \; \R_{m \times n} \to \R^{m.n} \\\\
+    \begin{pmatrix}
+        a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+    \end{pmatrix} \mapsto (a_{11}, \; \dots, \; a_{1n}, \; a_{21}, \; \dots, \; a_{2n}, \dots, \; a_{m1}, \;  \dots, \; a_{mn})
+$ \\\\
+
+Много ни се иска матриците да се държат като вектори, за целта искаме да си дефинирами операции събиране на матрци и умножение на матрица с число.
+Тоест много ни се иска да е изпълнено следното свойство: \\\\
+
+Ако $A = \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix}, \; B = \begin{pmatrix}
+    b_{11} & b_{12} & b_{13} & \dots  & b_{1n} \\
+    b_{21} & b_{22} & b_{23} & \dots  & b_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    b_{m1} & b_{m2} & b_{m3} & \dots  & b_{mn}
+\end{pmatrix}$ и $\lambda \in \R$\\\\
+
+да е изпълнено: \\
+$\varphi(A + B) = \varphi(A) + \varphi(B)$ (1) \\
+$\varphi(\lambda.A) = \lambda.\varphi(A)$ (2) \\
+
+От всичко, което знаeм до сега последователно получаваме: \\
+
+$\varphi(A) + \varphi(B) = \\\\
+= \varphi\left(\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix}\right) + \varphi\left(\begin{pmatrix}
+    b_{11} & b_{12} & b_{13} & \dots  & b_{1n} \\
+    b_{21} & b_{22} & b_{23} & \dots  & b_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    b_{m1} & b_{m2} & b_{m3} & \dots  & b_{mn}
+\end{pmatrix}\right) = \\\\
+= (a_{11}, \; \dots, \; a_{1n}, \; a_{21}, \; \dots, \; a_{2n}, \dots, \; a_{m1}, \;  \dots, \; a_{mn}) \\
++ (b_{11}, \; \dots, \; b_{1n}, \; b_{21}, \; \dots, \; b_{2n}, \dots, \; b_{m1}, \;  \dots, \; b_{mn}) = \\ 
+= (a_{11} + b_{11}, \; \dots, \; a_{1n} + b_{1n}, \; a_{21} + b_{21}, \; \dots, \; a_{2n} + b_{2n}, \dots, \; a_{m1} + b_{m1}, \;  \dots, \; a_{mn} + b_{mn}) = \\\\
+= \varphi\left(\begin{pmatrix}
+    a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13} & \dots  & a_{1n} + b_{1n} \\
+    a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23} & \dots  & a_{2n} + b_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} + b_{m1} & a_{m2} + b_{m2} & a_{m3} + b_{m3} & \dots  & a_{mn} + b_{mn}
+\end{pmatrix}\right) = \varphi(A + B) \implies \\\\\\
+A + B = \\\\
+= \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix} + \begin{pmatrix}
+    b_{11} & b_{12} & b_{13} & \dots  & b_{1n} \\
+    b_{21} & b_{22} & b_{23} & \dots  & b_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    b_{m1} & b_{m2} & b_{m3} & \dots  & b_{mn}
+\end{pmatrix} = \\\\
+= \begin{pmatrix}
+    a_{11} + b_{11} & a_{12} + b_{12} & a_{13} + b_{13} & \dots  & a_{1n} + b_{1n} \\
+    a_{21} + b_{21} & a_{22} + b_{22} & a_{23} + b_{23} & \dots  & a_{2n} + b_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} + b_{m1} & a_{m2} + b_{m2} & a_{m3} + b_{m3} & \dots  & a_{mn} + b_{mn}
+\end{pmatrix}$ \\
+
+и \\
+
+$\lambda.\varphi(A) = \\\\
+= \lambda.\varphi\left(\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix}\right) = \\\\
+= \lambda.(a_{11}, \; \dots, \; a_{1n}, \; a_{21}, \; \dots, \; a_{2n}, \dots, \; a_{m1}, \;  \dots, \; a_{mn}) = \\
+= (\lambda.a_{11}, \; \dots, \; \lambda.a_{1n}, \; \lambda.a_{21}, \; \dots, \; \lambda.a_{2n}, \dots, \; \lambda.a_{m1}, \;  \dots, \; \lambda.a_{mn}) = \\\\
+= \varphi\left(\begin{pmatrix}
+    \lambda.a_{11} & \lambda.a_{12} & \lambda.a_{13} & \dots  & \lambda.a_{1n} \\
+    \lambda.a_{21} & \lambda.a_{22} & \lambda.a_{23} & \dots  & \lambda.a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    \lambda.a_{m1} & \lambda.a_{m2} & \lambda.a_{m3} & \dots  & \lambda.a_{mn}
+\end{pmatrix}\right) = \varphi(\lambda.A) \implies \\\\\\
+\lambda.A = \lambda.\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix} = \begin{pmatrix}
+    \lambda.a_{11} & \lambda.a_{12} & \lambda.a_{13} & \dots  & \lambda.a_{1n} \\
+    \lambda.a_{21} & \lambda.a_{22} & \lambda.a_{23} & \dots  & \lambda.a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    \lambda.a_{m1} & \lambda.a_{m2} & \lambda.a_{m3} & \dots  & \lambda.a_{mn}
+\end{pmatrix} $ \\\\
+
+Тоест операциите отново си ги дефинираме като покомпонентно извършване на съответните операции между реални числа.
+
+\subsection*{Транспониране на матрица}
+
+Нека имаме следната функция дефинирана за всяко $m, \; n \in \N$: \\
+
+$\tau \; : \; \R_{m \times n} \to \R_{n \times m} \\\\
+\begin{pmatrix}
+    a_{11} & a_{12} & a_{13} & \dots  & a_{1n} \\
+    a_{21} & a_{22} & a_{23} & \dots  & a_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & a_{m3} & \dots  & a_{mn}
+\end{pmatrix} \mapsto \begin{pmatrix}
+    a_{11} & a_{21} & a_{31} & \dots  & a_{m1} \\
+    a_{12} & a_{22} & a_{32} & \dots  & a_{m2} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    a_{1n} & a_{2n} & a_{3n} & \dots  & a_{mn}
+\end{pmatrix}$ \\\\
+
+Тоест $\tau$ е функция, която от една матрица констуира матрица, чиито стълбове съвпадат с редовете на подадената матрица. \\
+
+Нека резултатната матрица от прилагането на функцията $\tau$ към матрицата $A$ означим с $A^t$, тоест $A^t = \tau(A)$.
+Матрицата $A^t$ ще наричаме транспонирана матрица на матрицата $A$, а самото действие ще наричаме транспониране. 
+
+\subsubsection*{Примери:}
+
+$
+\begin{pmatrix}
+    1 & 2 & 3 \\
+    0 & 5 & 7
+\end{pmatrix}^t = \begin{pmatrix}
+    1 & 0 \\
+    2 & 5 \\
+    3 & 7
+\end{pmatrix} \\\\\\
+\begin{pmatrix}
+    1 & 2 & 3 & -1 \\
+    0 & 5 & 7 & -1 \\
+    -4 & 2 & 5 & 1
+\end{pmatrix}^t = \begin{pmatrix}
+    1 & 0 & -4 \\
+    2 & 5 & 2 \\
+    3 & 7 & 5 \\
+    -1 & -1 & 1
+\end{pmatrix} \\\\\\
+\begin{pmatrix}
+    3 & -2 \\
+    4 & 5
+\end{pmatrix}^t = \begin{pmatrix}
+    3 & 4 \\
+    -2 & 5
+\end{pmatrix}
+$
+
+\subsection*{Умножение на матрици}
+
+Две матрици ще умножаваме по следното правило за всеки ред от лявата матрица и всеки стълб от дясната матрица
+сумираме произведението на елементите на еднакви позиции. Следователно броя на колоните на лявата и редовете на дясната матрица трябва да съвпадат ... \\\\
+
+Нека $A \in \R_{m \times n}, \; B \in \R_{n \times k}$ и нека $C = A.B \implies C \in \R_{m \times k}$. \\
+
+Нека матриците $A$, $B$ и $C$ съкратено са записани по следния начин: \\
+
+$A = (a_{ij})_{m \times n}, \; B = (b_{hl})_{n \times k}$ и нека $C = (c_{st})_{m \times k}$ тогава за елементите на матрицата $C$ е изпълнено: \\
+
+За всяко $s = 1, \; \dots, \; m, \; t = 1, \; \dots, \; k \; c_{st} = a_{s1}.b_{1t} + a_{s2}.b_{2t} + \dots + a_{sn}.b_{nt} = \displaystyle\sum_{v = 1}^n (a_{sv}.b_{vt}) $  \\\\
+
+\subsubsection*{Примери:}
+
+$
+\begin{pmatrix}
+    1 & 2 & 3 \\
+    0 & 5 & 7
+\end{pmatrix} . \begin{pmatrix}
+    1 & 2 & 3 & -1 \\
+    0 & 5 & 7 & -1 \\
+    -4 & 2 & 5 & 1
+\end{pmatrix} = \\\\\\
+= \begin{pmatrix}
+    1.1 + 2.0 + 3.(-4) & 1.2 + 2.5 + 3.2 & 1.3 + 2.7 + 3.5 & 1.(-1) + 2.(-1) + 3.1 \\
+    0.1 + 5.0 + 7.(-4) & 0.2 + 5.5 + 7.2 & 0.3 + 5.7 + 7.5 & 0.(-1) + 5.(-1) + 7.1
+\end{pmatrix} = \\\\\\
+= \begin{pmatrix}
+    1 + 0 - 12 & 2 + 10 + 6 & 3 + 14 + 15 & -1 -2 + 3 \\
+    0 + 0 - 28 & 0 + 25 + 14 & 0 + 35 + 35 & 0 - 5 + 7
+\end{pmatrix} = \begin{pmatrix}
+    -11 & 18 & 32 & 0 \\
+    -28 & 39 & 70 & 2
+\end{pmatrix} \\\\\\
+\begin{pmatrix}
+    1 & 2 & 3 \\
+    0 & 5 & 7
+\end{pmatrix} . \begin{pmatrix}
+    0 \\
+    1 \\
+    -1
+\end{pmatrix} = \begin{pmatrix}
+    1.0 + 2.1 + 3.(-1) \\
+    0.0 + 5.1 + 7.(-1)
+\end{pmatrix} = \begin{pmatrix}
+    -1 \\
+    -2
+\end{pmatrix} \\\\\\
+\begin{pmatrix}
+    1 & -1 \\
+    1 & 0
+\end{pmatrix} . \begin{pmatrix}
+    3 & -2 \\
+    4 & 5
+\end{pmatrix} = \begin{pmatrix}
+    1.3 + (-1).4 & 1.(-2) + (-1).5 \\
+    1.3 + 0.4 & 1.(-2) + 0.5
+\end{pmatrix}  = \begin{pmatrix}
+    -1 & -7 \\
+    3 & -2
+\end{pmatrix} \\\\\\
+\begin{pmatrix}
+    3 & -2 \\
+    4 & 5
+\end{pmatrix} . \begin{pmatrix}
+    1 & -1 \\
+    1 & 0
+\end{pmatrix} = \begin{pmatrix}
+    3.1 + (-2).1 & 3.(-1) + (-2).0 \\
+    4.1 + 5.1 & 4.(-1) + 5.0
+\end{pmatrix} = \begin{pmatrix}
+    1 & -3 \\
+    9 & -4
+\end{pmatrix}
+$
 
 \end{document}
