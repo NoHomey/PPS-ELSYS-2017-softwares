@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+    
+\usepackage[left=3cm,right=3cm,top=1cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amsthm}
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[bulgarian]{babel}
+\usepackage[normalem]{ulem}
+    
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+    
+\setlength{\parindent}{0mm}
+        
+\title{Вектори и матрици}
+\author{Иво Стратев}
+        
+\begin{document}
+\maketitle
+
+\section*{Задача 1}
+
+Напишете програма на любим за вас език за програмиране (ако нямате такъв може да пробвате Haskell),
+която прочита две матрици записани във файлове matrix1.csv и matrix2.csv. Ако матриците не могат да бъдат събрани
+отпечатва на екрана undefined. В противен случай отпечатва true или false в зависимост от това дали
+резултата е антисиметрична матрица. \\
+
+Една матрица $A$ наричаме антисиметрична ако е вярно равенството: $A^t = -A$
+\section*{Задача 2}
+
+Напишете програма на любим за вас език за програмиране (ако нямате такъв може да пробвате Haskell),
+която прочита две матрици записани във файлове matrix1.csv и matrix2.csv. Ако матриците не могат да бъдат умножени
+отпечатва на екрана undefined. В противен случай отпечатва true или false в зависимост от това дали
+резултата е симетрична матрица. \\
+
+Една матрица $A$ наричаме симетрична ако е вярно равенството: $A^t = A$.
+
+\section*{Задача 3}
+
+Нека $n$ е фиксирано произволно естествено число. \\
+
+Докажете, че за произволен вектор $a$ от $\R^n$ е изпълнено: \\
+
+$<a, \; a> \; \geq 0$ като $<a, \; a> \; = 0$ точно когато $a = (0, \; 0, \; \dots, \; 0)$
+
+\end{document}
