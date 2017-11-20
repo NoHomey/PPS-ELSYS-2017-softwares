@@ -41,13 +41,13 @@ class Matrix:
         if self.cols_count != other.rows_count:
             return None
 
-        result_matrix = []
-        for x_row in self.matrix:
-            result_row = []
-            for y_col in zip(*other.matrix):
-                result_row.append(sum(a * b for a, b in zip(x_row, y_col)))
-            
-            result_matrix.append(result_row)
+        result_matrix = [
+            [
+                sum(a * b for a, b in zip(x_row, y_col))
+                for y_col in zip(*other.matrix)
+            ]
+            for x_row in self.matrix
+        ]
 
         return Matrix(result_matrix)
     
