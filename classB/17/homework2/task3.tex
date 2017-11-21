@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[bulgarian]{babel}
+\author{Martin Datsev}
+\title{Homework 2 - Task 3}
+% Start the document
+\begin{document}
+\maketitle
+\section*{Твърдение:}
+Нека $n$ е фиксирано произволно естествено число.
+Тогава за произволни три вектора $a$, $b$ и $c$ от $\mathbb{R}^n$ е изпълнено равенството:
+
+\[<a + b, \; c> = <a, \; c> + <b, \; c>\]
+\subsection*{Доказателство:}
+
+
+\[<a, \; b> = \displaystyle\sum_{i = 1}^n (a_i.b_i) \tag{1} \label{eq:1}\]
+
+Ако
+\[a = (a_1, \; a_2, \; \dots, \; a_n), \; b = (b_1, \; b_2, \; \dots, \; b_n),\]
+то
+\[a + b = (a_1 + b_1, \; a_2 + b_2, \; \dots, \; a_n + b_n) \tag{2} \label{eq:2}\]
+
+От \eqref{eq:1} и \eqref{eq:2}:
+\[\implies<a + b, \; c>=\displaystyle\sum_{i = 1}^n ((a_i + b_i).c_i) \tag{3} \label{eq:3}\]
+
+\[<a, \; c> = \displaystyle\sum_{i = 1}^n (a_i.c_i) \tag{4} \label{eq:4}\]
+
+\[<b, \; c> = \displaystyle\sum_{i = 1}^n (b_i.c_i) \tag{5} \label{eq:5}\]
+
+От \eqref{eq:4} и \eqref{eq:5}:
+\[\implies<a, \; c> + <b, \; c> = \displaystyle\sum_{i = 1}^n (a_i.c_i) + \displaystyle\sum_{i = 1}^n (b_i.c_i) = \displaystyle\sum_{i = 1}^n (a_i.c_i + b_i.c_i) =\]
+\[= \displaystyle\sum_{i = 1}^n ((a_i + b_i).c_i) \overset{\eqref{eq:3}}{=} <a + b, \; c>\]
+
+\end{document}
