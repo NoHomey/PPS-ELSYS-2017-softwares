@@ -22,6 +22,11 @@ for i  in 0..rows - 1
 	end
 end
 
+if result.lenghth != result[0].length
+	p false
+	return
+end
+
 for i  in 0..rows - 1
 	for j in 0..cols - 1
 		if result[i][j] != ( -1 * result[j][i] )
