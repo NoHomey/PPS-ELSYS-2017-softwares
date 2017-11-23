@@ -12,11 +12,7 @@ class Matrix:
         self.matrix = matrix
 
     def __str__(self):
-        result = []
-        for row in self.matrix:
-            result.append(repr(row))
-
-        return '\n'.join(result)
+        return '\n'.join([repr(row) for row in self.matrix])
 
     def __len__(self):
         return sum(map(len, self.matrix))
