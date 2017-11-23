@@ -24,8 +24,15 @@ def can_i_sum matrix_1, matrix_2
 end
 
 def symmetric matrix
-  matrix.each_with_index(:strict_upper) do |e, row, col|
-    return false if (e != rows[col][row]) || (row_count(matrix) != col_count(matrix))
+  if (row_count(matrix) != col_count(matrix))
+    return false
+  end
+  arr_m = matrix_from_CSV(matrix)
+
+  arr_m.each_with_index do |val, row|
+    val.each_with_index do |e , col|
+      return false if e != arr_m[col][row]
+    end
   end
   true
 end
@@ -61,6 +68,7 @@ end
 
 if(valid_col(matrix_1) && valid_col(matrix_2))
   if(can_i_sum(matrix_1, matrix_2))
+    p matrix_from_CSV(sum(matrix_1, matrix_2))
     puts symmetric(sum(matrix_1, matrix_2))
   else
     puts "undefined"
