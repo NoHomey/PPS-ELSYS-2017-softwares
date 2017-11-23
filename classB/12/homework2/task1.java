@@ -79,7 +79,23 @@ public class MatrixAdd {
     }
 
     private static boolean checkIfEqualSize(Vector<Vector<Integer>> matrix1, Vector<Vector<Integer>> matrix2) {
-        return matrix1.size() == matrix2.size() && matrix1.get(0).size() == matrix2.get(0).size();
+        if(matrix1.size() != matrix2.size()) {
+            return false;
+        } else {
+            for(int i = 0; i < matrix1.size() - 1; i++) {
+                if(matrix1.get(i).size() != matrix1.get(i + 1).size() && matrix2.get(i).size() != matrix2.get(i + 1).size()) {
+                    return false;
+                }
+            }
+
+            for(int i = 0; i < matrix1.size(); i++) {
+                if(matrix1.get(i).size() != matrix2.get(i).size()) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
     private static void init(Scanner scanner, Vector<Vector<Integer>> matrix) {
