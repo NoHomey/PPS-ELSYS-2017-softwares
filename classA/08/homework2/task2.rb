@@ -34,7 +34,7 @@ if col_m1 != row_m2
   puts "undefined"
 else
   result1 = (Matrix.rows(arr1)*Matrix.rows(arr2))
-  result2 = res1.map {|el| el = -el}.transpose #everybody loves stackoverflow
+  result2 = result1.map {|el| el = -el}.transpose #everybody loves stackoverflow
 
   if result1 == result2
     puts "true"
