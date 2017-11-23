@@ -9,3 +9,5 @@ if matrixOne.shape[1] != matrixTwo.shape[0]:
 else:
 	result = np.dot(matrixOne, matrixTwo)
 	print((result.transpose() == -result).all())
+
+	
