@@ -29,13 +29,17 @@ end
 
 n2 = elements_in_line_count
 m2 = line_count
-begin
-  if m2 != n1
-    puts "undefined"
+
+if m2 != n1
+  puts "undefined"
+else
+  res1 = (Matrix.rows(arr1)*Matrix.rows(arr2))
+  res2 = res1.map {|el| el = -el}.transpose #At = -At
+
+  if res2 == res1
+    puts "true"
   else
-    res = (Matrix.rows(arr1)*Matrix.rows(arr2)).symmetric?
-    puts !res
+    puts "false"
   end
-rescue ExceptionForMatrix::ErrDimensionMismatch
-  puts "false"
+
 end
