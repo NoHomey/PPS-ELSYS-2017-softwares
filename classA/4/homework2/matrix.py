@@ -61,11 +61,11 @@ class Matrix:
 
     @property
     def is_symmetric(self) -> bool:
-        return self == Matrix.transposed(self)
+        return Matrix.transposed(self) == self
 
     @property
     def is_asymmetric(self) -> bool:
-        return self == -self
+        return Matrix.transposed(self) == -self
 
     @staticmethod
     def transposed(matrix):
