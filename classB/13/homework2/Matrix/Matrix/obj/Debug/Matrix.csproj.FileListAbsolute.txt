@@ -1,0 +1,16 @@
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\Matrix.exe.config
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\Matrix.exe
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\Matrix.pdb
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.Data.Text.dll
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.dll
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.xml
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.Data.Text.xml
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.csprojResolveAssemblyReference.cache
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.Form1.resources
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.Properties.Resources.resources
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.csproj.GenerateResource.Cache
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.exe
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.pdb
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.Data.Matlab.dll
+C:\Users\PC\Desktop\Matrix\Matrix\bin\Debug\MathNet.Numerics.Data.Matlab.xml
+C:\Users\PC\Desktop\Matrix\Matrix\obj\Debug\Matrix.Matrix.resources
